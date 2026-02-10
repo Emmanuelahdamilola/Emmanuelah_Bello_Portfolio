@@ -50,13 +50,13 @@ export function Navigation() {
                 href={item.href}
                 className="relative text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 group"
               >
-                <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-orange-500 transition-all duration-300">
+                <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-orange-500 transition-all duration-300">
                   {item.name}
                 </span>
                 {/* Animated underline */}
-                < span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-lilac-500 via-pink-500 to-orange-500 group-hover:w-full transition-all duration-300 ease-out" ></span>
+                < span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-lilac-500 via-pink-500 to-orange-500 group-hover:w-full transition-all duration-300 ease-out" ></span>
                 {/* Pulsing background on hover */}
-                <span className="absolute inset-0 -z-10 bg-linear-to-r from-lilac-500/0 via-pink-500/0 to-orange-500/0 group-hover:from-lilac-500/10 group-hover:via-pink-500/10 group-hover:to-orange-500/10 rounded-lg blur-sm group-hover:animate-pulse-slow transition-all duration-300"></span>
+                <span className="absolute inset-0 -z-10 bg-gradient-to-r from-lilac-500/0 via-pink-500/0 to-orange-500/0 group-hover:from-lilac-500/10 group-hover:via-pink-500/10 group-hover:to-orange-500/10 rounded-lg blur-sm group-hover:animate-pulse-slow transition-all duration-300"></span>
               </a>
             ))}
             <ThemeToggle />
@@ -67,7 +67,7 @@ export function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-linear-to-r hover:from-lilac-500/20 hover:to-pink-500/20 hover:animate-pulse-slow transition-all duration-300"
+              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-lilac-500/20 hover:to-pink-500/20 hover:animate-pulse-slow transition-all duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -89,7 +89,7 @@ export function Navigation() {
                   className="relative block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-linear-to-r hover:from-lilac-500/10 hover:via-pink-500/10 hover:to-orange-500/10 hover:animate-pulse-slow transition-all duration-300 group"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-orange-500 transition-all duration-300">
+                  <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-orange-500 transition-all duration-300">
                     {item.name}
                   </span>
                 </a>
