@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, Code2, Star, TrendingUp, Link2 } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
@@ -15,54 +15,60 @@ export function Projects() {
       description: 'A complete Business Listing Directory Backend API with Node.js, Express.js, MongoDB, and JWT Authentication. Features user registration, login, and business listing management.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
       github: 'https://github.com/Emmanuelahdamilola/FindMyBiz',
-      live: null,
+      live: 'https://findmybiz.com', // Add your live link
       gradient: 'from-purple-500 to-pink-500',
       image: '/projects/findmybiz.svg',
+      featured: true,
     },
     {
       title: 'Payroll Transparency System',
       description: 'Blockchain-based payroll verification platform using AI anomaly detection, staff hashing, and blockchain proof of authenticity. Includes Admin and Auditor dashboards.',
       technologies: ['Blockchain', 'AI', 'JavaScript'],
       github: 'https://github.com/Emmanuelahdamilola/payroll-transparency-system',
-      live: null,
+      live: 'https://payroll-transparency.vercel.app', // Add your live link
       gradient: 'from-blue-500 to-purple-500',
       image: '/projects/payroll.svg',
+      featured: true,
     },
     {
       title: 'Task Management API',
       description: 'RESTful API for task management with MongoDB integration. Full CRUD operations with efficient data handling and modern backend architecture.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'REST API'],
       github: 'https://github.com/Emmanuelahdamilola/task_management_api',
-      live: null,
+      live: 'https://task-api-demo.vercel.app', // Add your live link
       gradient: 'from-green-500 to-teal-500',
       image: '/projects/task-manager.svg',
+      featured: false,
     },
     {
       title: 'Movie Recommendation App',
       description: 'Interactive movie recommendation application with modern UI and dynamic content rendering.',
       technologies: ['JavaScript', 'React', 'API Integration'],
       github: 'https://github.com/Emmanuelahdamilola/Movie-recommendation-app',
-      live: null,
+      live: 'https://movie-recommendation-app.vercel.app', // Add your live link
       gradient: 'from-red-500 to-orange-500',
       image: '/projects/movie-app.svg',
+      featured: false,
     },
     {
       title: 'User CRUD API',
       description: 'Complete user management system with Create, Read, Update, and Delete operations. Built with best practices for API development.',
       technologies: ['Node.js', 'Express', 'MongoDB'],
       github: 'https://github.com/Emmanuelahdamilola/User-CRUD-API',
-      live: null,
+      live: 'https://user-crud-api.vercel.app', // Add your live link
       gradient: 'from-indigo-500 to-purple-500',
       image: '/projects/user-crud.svg',
+      featured: false,
     },
     {
       title: 'User API',
       description: 'Robust user authentication and management API with secure endpoints and comprehensive documentation.',
       technologies: ['JavaScript', 'Node.js', 'Express'],
       github: 'https://github.com/Emmanuelahdamilola/User-API',
-      live: null,
+      live: 'https://user-api-demo.vercel.app', // Add your live link
       gradient: 'from-pink-500 to-rose-500',
       image: '/projects/user-api.svg',
+      featured: false,
     },
   ];
 
@@ -71,16 +77,17 @@ export function Projects() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.12
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -90,14 +97,15 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden">
-      {/* Background decoration */}
+    <section id="projects" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+      {/* Enhanced background decoration */}
       <div className="absolute inset-0 -z-10">
         <motion.div
           className="absolute top-20 left-0 w-96 h-96 bg-lilac-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 100, 0],
+            y: [0, 50, 0],
           }}
           transition={{
             duration: 12,
@@ -110,6 +118,7 @@ export function Projects() {
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -100, 0],
+            y: [0, -50, 0],
           }}
           transition={{
             duration: 15,
@@ -117,35 +126,50 @@ export function Projects() {
             ease: "easeInOut"
           }}
         />
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto" ref={ref}>
+        {/* Section Header */}
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lilac-100/80 dark:bg-lilac-900/30 backdrop-blur-sm border border-lilac-200 dark:border-lilac-800 mb-6"
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : { scale: 0 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          >
+            <Code2 className="w-4 h-4 text-lilac-600 dark:text-lilac-400" />
+            <span className="text-sm font-medium text-lilac-700 dark:text-lilac-300">
+              Portfolio showcase
+            </span>
+          </motion.div>
+
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>
           <motion.p 
-            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             A showcase of my recent work and personal projects
           </motion.p>
         </motion.div>
 
+        {/* Projects Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -154,15 +178,29 @@ export function Projects() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-lilac-400 dark:hover:border-lilac-600 transition-all duration-300 hover:shadow-2xl hover:shadow-lilac-500/20 relative"
-              whileHover={{ y: -10 }}
+              className="group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-lilac-400 dark:hover:border-lilac-600 transition-all duration-500 hover:shadow-2xl hover:shadow-lilac-500/30 relative"
+              whileHover={{ y: -12, scale: 1.02 }}
             >
+              {/* Featured Badge */}
+              {project.featured && (
+                <motion.div
+                  className="absolute top-4 right-4 z-20 px-3 py-1.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-full text-xs font-bold flex items-center gap-1 shadow-lg"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: index * 0.1 + 0.5, type: "spring", stiffness: 200 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <Star className="w-3 h-3 fill-white" />
+                  Featured
+                </motion.div>
+              )}
+
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
                 <motion.div
                   className="absolute inset-0"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.15, rotate: 2 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                   <Image
                     src={project.image}
@@ -173,112 +211,148 @@ export function Projects() {
                 </motion.div>
                 
                 {/* Gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
-                
-                {/* Animated border on hover */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0`}
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
                   initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 0.1 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={{ opacity: 0.3 }}
+                />
+                
+                {/* Shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+                  animate={{ x: ["100%", "-100%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
               </div>
 
               {/* Animated gradient bar */}
-              <div className="relative h-1 overflow-hidden">
+              <div className="relative h-1.5 overflow-hidden">
                 <motion.div
                   className={`h-full bg-gradient-to-r ${project.gradient}`}
                   initial={{ x: '-100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
                 />
               </div>
               
               <div className="p-6 relative">
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-lilac-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-lilac-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-b-2xl pointer-events-none" />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-lilac-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-lilac-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-b-3xl pointer-events-none"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                />
                 
-                <motion.h3 
-                  className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-lilac-600 dark:group-hover:text-lilac-400 transition-colors relative z-10"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {project.title}
-                </motion.h3>
+                {/* Title with icon */}
+                <div className="flex items-start justify-between mb-3 relative z-10">
+                  <motion.h3 
+                    className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lilac-600 dark:group-hover:text-lilac-400 transition-colors flex-1"
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <TrendingUp className="w-5 h-5 text-lilac-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </motion.div>
+                </div>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed relative z-10 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 mb-5 text-sm leading-relaxed relative z-10 line-clamp-3">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-5 relative z-10">
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={tech}
-                      className="px-3 py-1 bg-lilac-50 dark:bg-lilac-900/20 text-lilac-700 dark:text-lilac-300 rounded-full text-xs font-medium border border-lilac-200 dark:border-lilac-800"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                      className="px-3 py-1.5 bg-gradient-to-r from-lilac-50 to-purple-50 dark:from-lilac-900/20 dark:to-purple-900/20 text-lilac-700 dark:text-lilac-300 rounded-lg text-xs font-semibold border border-lilac-200 dark:border-lilac-800 shadow-sm"
+                      initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                      animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 10 }}
                       transition={{ delay: index * 0.1 + techIndex * 0.05 }}
-                      whileHover={{ scale: 1.1, rotate: Math.random() * 10 - 5 }}
+                      whileHover={{ scale: 1.15, rotate: Math.random() * 10 - 5, y: -2 }}
                     >
                       {tech}
                     </motion.span>
                   ))}
                 </div>
 
+                {/* Action Buttons */}
                 <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700 relative z-10">
                   <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-lilac-600 dark:hover:text-lilac-400 transition-colors font-medium"
-                    whileHover={{ scale: 1.05, x: 5 }}
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-lilac-100 dark:hover:bg-lilac-900/30 hover:text-lilac-600 dark:hover:text-lilac-400 rounded-xl transition-all font-medium text-sm border border-gray-200 dark:border-gray-700 hover:border-lilac-400 dark:hover:border-lilac-600"
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <Github size={16} />
                     Code
                   </motion.a>
-                  {project.live && (
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-lilac-600 dark:hover:text-lilac-400 transition-colors font-medium"
-                      whileHover={{ scale: 1.05, x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </motion.a>
-                  )}
+                  <motion.a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-lilac-600 to-purple-600 text-white rounded-xl transition-all font-medium text-sm hover:shadow-lg hover:shadow-lilac-500/50"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <ExternalLink size={16} />
+                    Live Demo
+                  </motion.a>
                 </div>
               </div>
+
+              {/* Decorative corner */}
+              <motion.div
+                className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-lilac-500/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
             </motion.div>
           ))}
         </motion.div>
 
+        {/* GitHub CTA */}
         <motion.div 
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
         >
+          <motion.p
+            className="text-gray-600 dark:text-gray-400 mb-6"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.9 }}
+          >
+            Want to see more? Check out my GitHub for additional projects
+          </motion.p>
           <motion.a
             href="https://github.com/Emmanuelahdamilola"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-lilac text-white rounded-full font-medium relative overflow-hidden group"
-            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-lilac-600 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:shadow-lilac-500/50 transition-all duration-300 relative overflow-hidden group"
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center gap-3">
               <Github size={20} />
               View All Projects on GitHub
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                →
+              </motion.span>
             </span>
+            {/* Shine effect */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600"
-              initial={{ x: "100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+              animate={{ x: ["100%", "-100%"] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
             />
           </motion.a>
         </motion.div>
