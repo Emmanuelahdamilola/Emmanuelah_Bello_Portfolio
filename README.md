@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emmanuelah Bello - Portfolio
 
-## Getting Started
+A modern, professional portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a beautiful lilac/dark theme with smooth light/dark mode toggle.
 
-First, run the development server:
+## ✨ Features
 
+- 🎨 Beautiful lilac and dark color scheme
+- 🌓 Smooth light/dark mode toggle
+- 📱 Fully responsive design
+- ⚡ Built with Next.js 14 and TypeScript
+- 🎭 Framer Motion animations
+- 🎯 SEO optimized
+- 🚀 Fast and performant
+- ♿ Accessible
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Animations:** Framer Motion
+- **Theme:** next-themes
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Emmanuelahdamilola/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 🚀 Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Update Personal Information
 
-## Deploy on Vercel
+1. **Contact Information:**
+   - Edit `components/hero.tsx` - Update email link
+   - Edit `components/contact.tsx` - Update email address
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Projects:**
+   - Edit `components/projects.tsx` - Add/modify your projects
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Skills:**
+   - Edit `components/skills.tsx` - Update your skill levels and categories
+
+4. **About Section:**
+   - Edit `components/about.tsx` - Update your bio and highlights
+
+### Theme Colors
+
+The theme uses a lilac color palette. To customize:
+- Edit `tailwind.config.ts` - Modify the `lilac` color values
+
+## 📂 Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── layout.tsx          # Root layout with theme provider
+│   ├── page.tsx            # Main page
+│   └── globals.css         # Global styles
+├── components/
+│   ├── navigation.tsx      # Navigation bar
+│   ├── hero.tsx           # Hero section
+│   ├── about.tsx          # About section
+│   ├── skills.tsx         # Skills section
+│   ├── projects.tsx       # Projects section
+│   ├── contact.tsx        # Contact section
+│   ├── footer.tsx         # Footer
+│   ├── theme-toggle.tsx   # Theme toggle button
+│   └── theme-provider.tsx # Theme context provider
+├── public/                # Static assets
+├── tailwind.config.ts     # Tailwind configuration
+├── tsconfig.json          # TypeScript configuration
+└── package.json           # Dependencies
+
+```
+
+## 🎨 Color Palette
+
+- **Lilac 50:** #faf5ff
+- **Lilac 100:** #f3e8ff
+- **Lilac 200:** #e9d5ff
+- **Lilac 300:** #d8b4fe
+- **Lilac 400:** #c084fc
+- **Lilac 500:** #a855f7
+- **Lilac 600:** #9333ea
+- **Lilac 700:** #7e22ce
+- **Lilac 800:** #6b21a8
+- **Lilac 900:** #581c87
+
+## 📄 License
+
+MIT License - feel free to use this template for your own portfolio!
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 👨‍💻 Author
+
+**Emmanuelah Bello**
+- GitHub: [@Emmanuelahdamilola](https://github.com/Emmanuelahdamilola)
+- LinkedIn: [emmanuelahbello](https://www.linkedin.com/in/emmanuelahbello)
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Vercel for hosting
+- Tailwind CSS for the utility-first CSS framework
