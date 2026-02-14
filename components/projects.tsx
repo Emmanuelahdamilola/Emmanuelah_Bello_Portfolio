@@ -11,13 +11,13 @@ export function Projects() {
 
   const projects = [
     {
-      title: 'FindMyBiz',
+      title: 'Ekiti Listing',
       description: 'A complete Business Listing Directory Backend API with Node.js, Express.js, MongoDB, and JWT Authentication. Features user registration, login, and business listing management.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-      github: 'https://github.com/Emmanuelahdamilola/FindMyBiz',
-      live: 'https://findmybiz.com', // Add your live link
-      gradient: 'from-purple-500 to-pink-500',
-      image: '/projects/findmybiz.svg',
+      github: 'https://github.com/Emmanuelahdamilola/Ekiti_Listing',
+      live: 'https://ekiti-listing.vercel.app/', 
+      gradient: 'from-green-500 to-teal-500',
+      image: '/projects/ekiti_listing.png',
       featured: true,
     },
     {
@@ -25,19 +25,19 @@ export function Projects() {
       description: 'Blockchain-based payroll verification platform using AI anomaly detection, staff hashing, and blockchain proof of authenticity. Includes Admin and Auditor dashboards.',
       technologies: ['Blockchain', 'AI', 'JavaScript'],
       github: 'https://github.com/Emmanuelahdamilola/payroll-transparency-system',
-      live: 'https://payroll-transparency.vercel.app', // Add your live link
-      gradient: 'from-blue-500 to-purple-500',
+      live: 'https://payroll-transparency.vercel.app', 
+      gradient: 'from-red-500 to-pink-600',
       image: '/projects/payroll.svg',
       featured: true,
     },
     {
-      title: 'Task Management API',
-      description: 'RESTful API for task management with MongoDB integration. Full CRUD operations with efficient data handling and modern backend architecture.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'REST API'],
+      title: 'AI Healthmate',
+      description: 'An AI-driven voice technology healthcare platform. Provides instant health recommendations based on symptoms using advanced voice recognition and AI analysis.',
+      technologies: ['AI/ML', 'Voice Tech', 'React', 'Next.js'],
       github: 'https://github.com/Emmanuelahdamilola/task_management_api',
-      live: 'https://task-api-demo.vercel.app', // Add your live link
-      gradient: 'from-green-500 to-teal-500',
-      image: '/projects/task-manager.svg',
+      live: 'https://aihealthmate-sooty.vercel.app/', 
+      gradient: 'from-blue-500 to-purple-500',
+      image: '/projects/aihealthmate.png',
       featured: false,
     },
     {
@@ -45,19 +45,19 @@ export function Projects() {
       description: 'Interactive movie recommendation application with modern UI and dynamic content rendering.',
       technologies: ['JavaScript', 'React', 'API Integration'],
       github: 'https://github.com/Emmanuelahdamilola/Movie-recommendation-app',
-      live: 'https://movie-recommendation-app.vercel.app', // Add your live link
+      live: 'https://movie-recommendation-app.vercel.app', 
       gradient: 'from-red-500 to-orange-500',
       image: '/projects/movie-app.svg',
       featured: false,
     },
     {
-      title: 'User CRUD API',
-      description: 'Complete user management system with Create, Read, Update, and Delete operations. Built with best practices for API development.',
-      technologies: ['Node.js', 'Express', 'MongoDB'],
+      title: 'ChiperHub',
+      description: 'An integrated IT solutions platform offering comprehensive services for businesses. Features modern UI with service showcases and customer support integration.',
+      technologies: ['JavaScript', 'HTML/CSS', 'Vercel'],
       github: 'https://github.com/Emmanuelahdamilola/User-CRUD-API',
-      live: 'https://user-crud-api.vercel.app', // Add your live link
-      gradient: 'from-indigo-500 to-purple-500',
-      image: '/projects/user-crud.svg',
+      live: 'https://chiper-hub.vercel.app/',
+      gradient: 'from-blue-500 to-blue-700',
+      image: '/projects/chiperhub.png',
       featured: false,
     },
     {
