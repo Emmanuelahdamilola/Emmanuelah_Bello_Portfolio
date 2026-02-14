@@ -133,7 +133,7 @@ export function Hero() {
 
 
             <a
-              href="https://wa.me/yourphonenumber"
+              href="https://wa.me/+2348162191552"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-4 rounded-full bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:from-green-100 hover:to-green-200 dark:hover:from-green-900/30 dark:hover:to-green-800/30"
@@ -147,7 +147,7 @@ export function Hero() {
 
 
             <a
-              href="mailto:emmanuelahdamilola@example.com"
+              href="mailto:emmanuelahdamilola@gmail.com"
               className="group relative p-4 rounded-full bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:from-lilac-100 hover:to-pink-100 dark:hover:from-lilac-900/30 dark:hover:to-pink-900/30"
               aria-label="Email"
             >
