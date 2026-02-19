@@ -101,10 +101,10 @@ export function Skills() {
       skills: [
         { name: 'HTML5', level: 95 },
         { name: 'CSS3', level: 90 },
-        { name: 'JavaScript', level: 90 },
-        { name: 'React.js', level: 88 },
-        { name: 'Next.js', level: 85 },
-        { name: 'TailwindCSS', level: 92 },
+        { name: 'JavaScript', level: 80 },
+        { name: 'React.js', level: 78 },
+        { name: 'Next.js', level:55 },
+        { name: 'TailwindCSS', level: 72 },
         { name: 'Bootstrap', level: 85 },
       ]
     },
@@ -113,11 +113,11 @@ export function Skills() {
       icon: Database,
       color: 'from-green-500 to-emerald-500',
       skills: [
-        { name: 'Node.js', level: 87 },
-        { name: 'Express.js', level: 88 },
-        { name: 'RESTful APIs', level: 90 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'JWT Auth', level: 82 },
+        { name: 'Node.js', level: 67 },
+        { name: 'Express.js', level: 68 },
+        { name: 'RESTful APIs', level: 60 },
+        { name: 'MongoDB', level: 65 },
+        { name: 'JWT Auth', level: 64 },
       ]
     },
     {
@@ -125,11 +125,11 @@ export function Skills() {
       icon: Wrench,
       color: 'from-purple-500 to-pink-500',
       skills: [
-        { name: 'Git & GitHub', level: 90 },
-        { name: 'VS Code', level: 95 },
-        { name: 'Postman', level: 85 },
+        { name: 'Git & GitHub', level: 70 },
+        { name: 'VS Code', level: 75 },
+        { name: 'Postman', level: 65 },
         { name: 'Responsive Design', level: 92 },
-        { name: 'TypeScript', level: 80 },
+        { name: 'TypeScript', level: 40 },
       ]
     }
   ];
@@ -145,6 +145,7 @@ export function Skills() {
     { name: 'TailwindCSS', color: 'hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:border-teal-400' },
     { name: 'Bootstrap', color: 'hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:border-purple-400' },
     { name: 'Next.js', color: 'hover:bg-gray-200 dark:hover:bg-gray-700 hover:border-gray-500' },
+    { name: 'TypeScript', color: 'hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:border-blue-400' },
   ];
 
   const containerVariants = {
