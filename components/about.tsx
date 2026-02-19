@@ -36,10 +36,10 @@ export function About() {
   ];
 
   const stats = [
-    { icon: Target, label: 'Projects Delivered', value: '20+', color: 'text-lilac-600 dark:text-lilac-400' },
+    { icon: Target, label: 'Projects Delivered', value: '10+', color: 'text-lilac-600 dark:text-lilac-400' },
     { icon: Zap, label: 'Technologies', value: '15+', color: 'text-purple-600 dark:text-purple-400' },
     { icon: Heart, label: 'Happy Clients', value: '15+', color: 'text-pink-600 dark:text-pink-400' },
-    { icon: Sparkles, label: 'Years Experience', value: '3+', color: 'text-orange-600 dark:text-orange-400' },
+    { icon: Sparkles, label: 'Years Experience', value: '2+', color: 'text-orange-600 dark:text-orange-400' },
   ];
 
   const containerVariants = {
