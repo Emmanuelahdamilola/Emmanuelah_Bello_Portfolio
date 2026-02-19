@@ -23,7 +23,7 @@ export function Projects() {
     {
       title: 'Payroll Transparency System',
       description: 'Blockchain-based payroll verification platform using AI anomaly detection, staff hashing, and blockchain proof of authenticity. Includes Admin and Auditor dashboards.',
-      technologies: ['Blockchain', 'AI', 'JavaScript'],
+      technologies: ['Blockchain', 'AI', 'ExpressJS', 'TypeScript', 'MongoDB'],
       github: 'https://github.com/Emmanuelahdamilola/payroll-transparency-system',
       live: 'https://payroll-transparency.vercel.app', 
       gradient: 'from-red-500 to-pink-600',
