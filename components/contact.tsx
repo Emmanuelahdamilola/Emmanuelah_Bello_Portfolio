@@ -68,15 +68,6 @@ export function Contact() {
       color: 'from-blue-500 to-cyan-500',
       hoverColor: 'hover:from-blue-600 hover:to-cyan-600'
     },
-    // { 
-    //   icon: MapPin, 
-    //   title: 'Location', 
-    //   value: 'Open to remote opportunities', 
-    //   href: null,
-    //   color: 'from-blue-500 to-cyan-500',
-    //   hoverColor: ''
-    //https://x.com/codedvirtue
-    // },
   ];
 
   const socialLinks = [
