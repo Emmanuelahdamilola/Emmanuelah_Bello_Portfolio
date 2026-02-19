@@ -1,0 +1,19 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad6)"/>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">User API</text>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.9)" text-anchor="middle">Authentication System</text>
+  <rect x="300" y="300" width="200" height="120" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="400" cy="360" r="35" fill="rgba(255,255,255,0.4)"/>
+  <path d="M 400 340 L 400 365" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 400 365 L 390 375" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 400 365 L 410 375" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="150" cy="100" r="40" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="650" cy="380" r="50" fill="rgba(255,255,255,0.15)"/>
+  <rect x="650" y="80" width="100" height="70" rx="10" fill="rgba(255,255,255,0.15)"/>
+</svg>
