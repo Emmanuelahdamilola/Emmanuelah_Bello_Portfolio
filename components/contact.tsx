@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, MapPin, Send, Phone, MessageCircle, Sparkles, CheckCircle2 } from 'lucide-react';
-import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaWhatsapp, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -64,19 +64,29 @@ export function Contact() {
       icon: MapPin, 
       title: 'Location', 
       value: 'Open to remote opportunities', 
-      href: null,
+      href: 'https://wa.me/2348162191552',
       color: 'from-blue-500 to-cyan-500',
-      hoverColor: ''
+      hoverColor: 'hover:from-blue-600 hover:to-cyan-600'
     },
+    // { 
+    //   icon: MapPin, 
+    //   title: 'Location', 
+    //   value: 'Open to remote opportunities', 
+    //   href: null,
+    //   color: 'from-blue-500 to-cyan-500',
+    //   hoverColor: ''
+    //https://x.com/codedvirtue
+    // },
   ];
 
   const socialLinks = [
     { name: 'GitHub', icon: FaGithub, href: 'https://github.com/Emmanuelahdamilola', color: 'hover:text-gray-900 dark:hover:text-white' },
     { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/emmanuelahbello', color: 'hover:text-blue-600' },
+    { name: 'Twitter', icon: FaTwitter, href: 'hhttps://x.com/codedvirtue', color: 'hover:text-blue-800' },
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
       {/* Enhanced background decoration */}
       <div className="absolute inset-0 -z-10">
         <motion.div
@@ -146,7 +156,7 @@ export function Contact() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact Info */}
           <motion.div
             className="space-y-8"
@@ -156,7 +166,7 @@ export function Contact() {
           >
             {/* Intro Card */}
             <motion.div
-              className="p-8 bg-white dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-xl relative overflow-hidden"
+              className="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-xl relative overflow-hidden"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -202,7 +212,7 @@ export function Contact() {
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-center gap-4 p-5 bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-lilac-400 dark:hover:border-lilac-600 transition-all duration-300 hover:shadow-xl hover:shadow-lilac-500/20"
+                      className="flex items-center gap-4 p-4 sm:p-5 bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-lilac-400 dark:hover:border-lilac-600 transition-all duration-300 hover:shadow-xl hover:shadow-lilac-500/20"
                       whileHover={{ x: 8, scale: 1.02 }}
                     >
                       <motion.div
@@ -210,7 +220,7 @@ export function Contact() {
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.6 }}
                       >
-                        <contact.icon className="w-6 h-6" />
+                        <contact.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.div>
                       <div className="flex-1">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-1">{contact.title}</h4>
@@ -229,7 +239,7 @@ export function Contact() {
                   ) : (
                     <div className="flex items-center gap-4 p-5 bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700">
                       <div className={`p-4 bg-gradient-to-br ${contact.color} rounded-xl text-white shadow-lg`}>
-                        <contact.icon className="w-6 h-6" />
+                        <contact.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
                       <div>
                         <h4 className="font-bold text-gray-900 dark:text-white mb-1">{contact.title}</h4>
@@ -259,14 +269,14 @@ export function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-700 dark:text-gray-300 ${social.color} transition-all duration-300 font-medium border-2 border-transparent hover:border-lilac-400 dark:hover:border-lilac-600 hover:shadow-lg`}
+                    className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-700 dark:text-gray-300 ${social.color} transition-all duration-300 font-medium border-2 border-transparent hover:border-lilac-400 dark:hover:border-lilac-600 hover:shadow-lg`}
                     whileHover={{ scale: 1.05, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ delay: 1.1 + index * 0.1 }}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     {social.name}
                   </motion.a>
                 ))}
@@ -319,7 +329,7 @@ export function Contact() {
                     value={formData[field as keyof typeof formData]}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-lilac-500 focus:border-lilac-500 outline-none transition-all text-gray-900 dark:text-white placeholder:text-gray-400"
+                    className="w-full px-4 sm:px-5 py-3 sm:py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-lilac-500 focus:border-lilac-500 outline-none transition-all text-gray-900 dark:text-white placeholder:text-gray-400"
                     placeholder={field === 'email' ? 'your.email@example.com' : 'Your name'}
                     whileFocus={{ scale: 1.01, borderColor: '#a855f7' }}
                   />
@@ -341,7 +351,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-5 py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-lilac-500 focus:border-lilac-500 outline-none transition-all resize-none text-gray-900 dark:text-white placeholder:text-gray-400"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-3.5 bg-gray-50 dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-lilac-500 focus:border-lilac-500 outline-none transition-all resize-none text-gray-900 dark:text-white placeholder:text-gray-400"
                   placeholder="Tell me about your project..."
                   whileFocus={{ scale: 1.01, borderColor: '#a855f7' }}
                 />
@@ -350,7 +360,7 @@ export function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-lilac-600 to-purple-600 text-white rounded-xl font-semibold relative overflow-hidden shadow-lg hover:shadow-xl hover:shadow-lilac-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-lilac-600 to-purple-600 text-white rounded-xl font-semibold relative overflow-hidden shadow-lg hover:shadow-xl hover:shadow-lilac-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.9 }}
@@ -361,7 +371,7 @@ export function Contact() {
                   {isSubmitting ? (
                     <>
                       <motion.div
-                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-white border-t-transparent rounded-full"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
