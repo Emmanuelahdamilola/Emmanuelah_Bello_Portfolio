@@ -2,7 +2,7 @@
 
 import { button, label, section } from 'framer-motion/client';
 import { Github, Linkedin, Mail, Download, ArrowDown, Sparkles } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -156,17 +156,30 @@ export function Hero() {
                 Email
               </span>
             </a>
+
+            <a
+              href="https://x.com/codedvirtue"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-full bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:from-green-100 hover:to-green-200 dark:hover:from-green-900/30 dark:hover:to-green-800/30"
+              aria-label="WhatsApp"
+            >
+              <FaTwitter className="w-6 h-6 group-hover:text-blue-500 transition-colors" />
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Twitter
+              </span>
+            </a>
           </div>
 
           {/* Stats or Quick Info */}
           <div className="flex flex-wrap items-center justify-center gap-8 pt-8 pb-20 animate-fade-in" style={{ animationDelay: '1.2s' }}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">3+</div>
+              <div className="text-3xl font-bold text-gradient">2+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
             </div>
             <div className="w-px h-12 bg-gray-300 dark:bg-gray-700"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">20+</div>
+              <div className="text-3xl font-bold text-gradient">10+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
             </div>
             <div className="w-px h-12 bg-gray-300 dark:bg-gray-700"></div>
