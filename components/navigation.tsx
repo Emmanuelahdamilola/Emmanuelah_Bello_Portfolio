@@ -32,7 +32,7 @@ export function Navigation() {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -47,11 +47,10 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-lg shadow-lilac-500/5 border-b border-lilac-100/20 dark:border-lilac-900/20'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -62,7 +61,9 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10">EB</span>
+            <span className="relative z-20 bg-clip-text text-gradient">
+              EB.
+            </span>
             {/* Sparkle effect */}
             <motion.div
               className="absolute -top-1 -right-1"
@@ -98,7 +99,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => {
               const isActive = activeSection === item.href.substring(1);
-              
+
               return (
                 <motion.a
                   key={item.name}
@@ -117,18 +118,17 @@ export function Navigation() {
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                  
+
                   {/* Text with gradient on hover */}
-                  <span className={`relative z-10 transition-all duration-300 ${
-                    isActive 
-                      ? 'text-transparent bg-clip-text bg-gradient-to-r from-lilac-600 via-pink-600 to-purple-600'
+                  <span className={`relative z-10 transition-all duration-300 ${isActive
+                      ? 'text-gradient bg-clip-text '
                       : 'text-gray-700 dark:text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-purple-500'
-                  }`}>
+                    }`}>
                     {item.name}
                   </span>
 
                   {/* Animated underline */}
-                  <motion.span 
+                  <motion.span
                     className="absolute bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-lilac-500 via-pink-500 to-purple-500 rounded-full"
                     initial={{ width: 0, x: '-50%' }}
                     whileHover={{ width: '80%' }}
@@ -141,7 +141,7 @@ export function Navigation() {
                 </motion.a>
               );
             })}
-            
+
             {/* Theme toggle with separator */}
             <div className="flex items-center gap-3 ml-2">
               <div className="w-px h-6 bg-gradient-to-b from-transparent via-lilac-500/50 to-transparent" />
@@ -174,7 +174,7 @@ export function Navigation() {
                   {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </motion.div>
               </AnimatePresence>
-              
+
               {/* Ripple effect */}
               <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-lilac-500/20 to-pink-500/20 scale-0 group-hover:scale-100 transition-transform duration-500" />
             </motion.button>
@@ -195,17 +195,16 @@ export function Navigation() {
             <div className="px-4 pt-4 pb-6 space-y-2">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.href.substring(1);
-                
+
                 return (
                   <motion.a
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`relative block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 group overflow-hidden ${
-                      isActive 
+                    className={`relative block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 group overflow-hidden ${isActive
                         ? 'bg-gradient-to-r from-lilac-500/20 via-pink-500/20 to-purple-500/20'
                         : 'hover:bg-lilac-50 dark:hover:bg-lilac-900/20'
-                    }`}
+                      }`}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
@@ -213,7 +212,7 @@ export function Navigation() {
                   >
                     {/* Background gradient on hover */}
                     <span className="absolute inset-0 bg-gradient-to-r from-lilac-500/0 via-pink-500/0 to-purple-500/0 group-hover:from-lilac-500/10 group-hover:via-pink-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
-                    
+
                     {/* Active indicator dot */}
                     {isActive && (
                       <motion.span
@@ -222,13 +221,12 @@ export function Navigation() {
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
-                    
+
                     {/* Text */}
-                    <span className={`relative z-10 transition-all duration-300 ${
-                      isActive
+                    <span className={`relative z-10 transition-all duration-300 ${isActive
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-lilac-600 via-pink-600 to-purple-600 font-semibold'
                         : 'text-gray-700 dark:text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lilac-500 group-hover:via-pink-500 group-hover:to-purple-500'
-                    }`}>
+                      }`}>
                       {item.name}
                     </span>
 
