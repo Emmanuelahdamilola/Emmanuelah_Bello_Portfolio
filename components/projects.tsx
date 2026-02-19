@@ -65,7 +65,7 @@ export function Projects() {
       description: 'Robust user authentication and management API with secure endpoints and comprehensive documentation.',
       technologies: ['JavaScript', 'Node.js', 'Express'],
       github: 'https://github.com/Emmanuelahdamilola/User-API',
-      live: 'https://user-api-demo.vercel.app', // Add your live link
+      live: 'https://user-api-demo.vercel.app', 
       gradient: 'from-pink-500 to-rose-500',
       image: '/projects/user-api.svg',
       featured: false,
