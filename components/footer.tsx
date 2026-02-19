@@ -15,7 +15,7 @@ const footerLinks = {
   social: [
     { name: 'GitHub', icon: Github, href: 'https://github.com/Emmanuelahdamilola', color: 'hover:text-gray-900 dark:hover:text-white' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/emmanuelahbello', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: FaTwitter, href: 'https://twitter.com/emmanuelahbello', color: 'hover:text-blue-400' },
+    { name: 'Twitter', icon: FaTwitter, href: 'https://x.com/codedvirtue', color: 'hover:text-blue-400' },
     { name: 'WhatsApp', icon: FaWhatsapp, href: 'https://wa.me/@2348162191552', color: 'hover:text-green-500' },
     { name: 'Email', icon: Mail, href: 'mailto:your.emmanuelahdamilola@gmail.com', color: 'hover:text-lilac-600' },
   ],
