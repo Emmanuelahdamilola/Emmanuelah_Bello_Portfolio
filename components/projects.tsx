@@ -206,7 +206,7 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-fill"
                   />
                 </motion.div>
                 
