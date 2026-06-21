@@ -193,7 +193,7 @@ export function Hero() {
       {/* Enhanced scroll indicator */}
       <button
         onClick={scrollToProjects}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group"
         aria-label="Scroll down">
         <div className="w-8 h-12 rounded-full border-2 border-lilac-500 flex items-start justify-center p-2 group-hover:border-lilac-600 transition-colors">
           <div className="w-1.5 h-3 bg-lilac-500 rounded-full animate-pulse group-hover:bg-lilac-600"></div>
