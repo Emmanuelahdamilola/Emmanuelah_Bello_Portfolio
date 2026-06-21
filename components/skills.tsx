@@ -354,7 +354,13 @@ export function Skills() {
             </div>
             
             <div className="flex flex-wrap justify-center items-center gap-4">
-              {techStack.map((tech, index) => (
+              {techStack.map((tech, index) => {
+                // Deterministic per-item jitter (derived from index, not
+                // Math.random()) so each badge still tilts a slightly
+                // different amount on hover, without calling an impure
+                // function during render.
+                const jitter = ((index * 37) % 10) - 5;
+                return (
                 <motion.div
                   key={tech.name}
                   className={`group px-6 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 ${tech.color} relative overflow-hidden cursor-pointer`}
@@ -363,7 +369,7 @@ export function Skills() {
                   transition={{ delay: 1 + index * 0.05, duration: 0.3, type: "spring" }}
                   whileHover={{ 
                     scale: 1.15,
-                    rotate: Math.random() * 10 - 5,
+                    rotate: jitter,
                     y: -5,
                     transition: { type: "spring", stiffness: 400, damping: 10 }
                   }}
@@ -379,7 +385,8 @@ export function Skills() {
                     transition={{ duration: 0.3 }}
                   />
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </motion.div>

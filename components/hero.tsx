@@ -1,6 +1,5 @@
 'use client';
 
-import { button, label, section } from 'framer-motion/client';
 import { Github, Linkedin, Mail, Download, ArrowDown, Sparkles } from 'lucide-react';
 import { FaTwitter, FaWhatsapp } from 'react-icons/fa';
 

@@ -10,46 +10,16 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
-    {
-      title: 'Ekiti Listing',
-      description: 'A complete Business Listing Directory Backend API with Node.js, Express.js, MongoDB, and JWT Authentication. Features user registration, login, and business listing management.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-      github: 'https://github.com/Emmanuelahdamilola/Ekiti_Listing',
-      live: 'https://ekiti-listing.vercel.app/', 
-      gradient: 'from-green-500 to-teal-500',
-      image: '/projects/ekiti_listing.png',
-      featured: true,
-    },
-    {
-      title: 'Payroll Transparency System',
-      description: 'Blockchain-based payroll verification platform using AI anomaly detection, staff hashing, and blockchain proof of authenticity. Includes Admin and Auditor dashboards.',
-      technologies: ['Blockchain', 'AI', 'ExpressJS', 'TypeScript', 'MongoDB'],
-      github: 'https://github.com/Emmanuelahdamilola/payroll-transparency-system',
-      live: 'https://payroll-transparency.vercel.app', 
-      gradient: 'from-red-500 to-pink-600',
-      image: '/projects/payroll.svg',
-      featured: true,
-    },
-    {
-      title: 'AI Healthmate',
-      description: 'An AI-driven voice technology healthcare platform. Provides instant health recommendations based on symptoms using advanced voice recognition and AI analysis.',
-      technologies: ['AI/ML', 'Voice Tech', 'React', 'Next.js'],
-      github: 'https://github.com/Emmanuelahdamilola/task_management_api',
-      live: 'https://aihealthmate-sooty.vercel.app/', 
-      gradient: 'from-blue-500 to-purple-500',
-      image: '/projects/aihealthmate.png',
-      featured: false,
-    },
-    {
-      title: 'Movie Recommendation App',
-      description: 'Interactive movie recommendation application with modern UI and dynamic content rendering.',
-      technologies: ['JavaScript', 'React', 'API Integration'],
-      github: 'https://github.com/Emmanuelahdamilola/Movie-recommendation-app',
-      live: 'https://movie-recommendation-app-52vz.vercel.app/', 
-      gradient: 'from-red-500 to-orange-500',
-      image: '/projects/Macbook-Air-movie-recommendation-app-52vz.vercel.app.png',
-      featured: false,
-    },
+    // {
+    //   title: 'Weather App',
+    //   description: 'A sleek and responsive weather application that allows users to get real-time weather data by entering a city name.',
+    //   technologies: ['HTML, CSS, Bootstrap, JS'],
+    //   github: 'https://github.com/Emmanuelahdamilola/Weather-App',
+    //   live: 'https://weather-app-two-liart-14.vercel.app/',
+    //   gradient: 'from-red-500 to-pink-600',
+    //   image: '/projects/payroll.svg',
+    //   featured: true,
+    // },
     {
       title: 'ChiperHub',
       description: 'An integrated IT solutions platform offering comprehensive services for businesses. Features modern UI with service showcases and customer support integration.',
@@ -61,11 +31,51 @@ export function Projects() {
       featured: false,
     },
     {
+      title: 'Ekiti Listing',
+      description: 'A complete Business Listing Directory Backend API with Node.js, Express.js, MongoDB, and JWT Authentication. Features user registration, login, and business listing management.',
+      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
+      github: 'https://github.com/Emmanuelahdamilola/Ekiti_Listing',
+      live: 'https://ekiti-listing.vercel.app/',
+      gradient: 'from-green-500 to-teal-500',
+      image: '/projects/ekiti_listing.png',
+      featured: true,
+    },
+    {
+      title: 'Movie Recommendation App',
+      description: 'Interactive movie recommendation application with modern UI and dynamic content rendering.',
+      technologies: ['JavaScript', 'React', 'API Integration'],
+      github: 'https://github.com/Emmanuelahdamilola/Movie-recommendation-app',
+      live: 'https://movie-recommendation-app-52vz.vercel.app/',
+      gradient: 'from-red-500 to-orange-500',
+      image: '/projects/Macbook-Air-movie-recommendation-app-52vz.vercel.app.png',
+      featured: false,
+    },
+    {
+      title: 'RestraQuest',
+      description: 'RestraQuest is a web-based platform designed to help users discover, order food from various restaurants, make payments, rate and review their experiences, and manage their accounts with secure sign-in and sign-out functionality',
+      technologies: ['JavaScript', 'HTML/CSS', 'Vercel'],
+      github: 'https://github.com/Emmanuelahdamilola/ALX-Portfolio-Project--RestraQuest',
+      live: 'https://restra-quest-fg3ci0qck-emmanuelah-damilolas-projects.vercel.app/',
+      gradient: 'from-blue-500 to-blue-700',
+      image: '/projects/Macbook-Air-restra-quest-fg3ci0qck-emmanuelah-damilolas-projects.vercel.app.png',
+      featured: false,
+    },
+    {
+      title: 'AI Healthmate',
+      description: 'An AI-driven voice technology healthcare platform. Provides instant health recommendations based on symptoms using advanced voice recognition and AI analysis.',
+      technologies: ['AI/ML', 'Voice Tech', 'React', 'Next.js'],
+      github: 'https://github.com/Emmanuelahdamilola/task_management_api',
+      live: 'https://aihealthmate-sooty.vercel.app/',
+      gradient: 'from-blue-500 to-purple-500',
+      image: '/projects/aihealthmate.png',
+      featured: false,
+    },
+    {
       title: 'Codentia LMS',
       description: 'A hybrid interactive coding academy — self-paced lessons, live classes, and an AI tutor in one platform.',
       technologies: ['JavaScript', 'Node.js', 'Express'],
       github: 'https://github.com/Emmanuelahdamilola/codentia-LMS',
-      live: 'https://codentia.vercel.app/home', 
+      live: 'https://codentia.vercel.app/home',
       gradient: 'from-pink-500 to-rose-500',
       image: '/projects/Macbook-Air-codentia.vercel.app.png',
       featured: false,
@@ -131,7 +141,7 @@ export function Projects() {
 
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -149,7 +159,7 @@ export function Projects() {
             </span>
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
@@ -157,7 +167,7 @@ export function Projects() {
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -168,7 +178,7 @@ export function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -206,17 +216,19 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-fill"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="object-cover"
                   />
                 </motion.div>
-                
+
                 {/* Gradient overlay */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 0.3 }}
                 />
-                
+
                 {/* Shine effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
@@ -234,18 +246,18 @@ export function Projects() {
                   transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
                 />
               </div>
-              
+
               <div className="p-6 relative">
                 {/* Glow effect */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-lilac-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-lilac-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-b-3xl pointer-events-none"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                 />
-                
+
                 {/* Title with icon */}
                 <div className="flex items-start justify-between mb-3 relative z-10">
-                  <motion.h3 
+                  <motion.h3
                     className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-lilac-600 dark:group-hover:text-lilac-400 transition-colors flex-1"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -259,25 +271,28 @@ export function Projects() {
                     <TrendingUp className="w-5 h-5 text-lilac-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.div>
                 </div>
-                
+
                 <p className="text-gray-600 dark:text-gray-400 mb-5 text-sm leading-relaxed relative z-10 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-5 relative z-10">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.technologies.map((tech, techIndex) => {
+                    const jitter = ((techIndex * 37) % 10) - 5;
+                    return (
                     <motion.span
                       key={tech}
                       className="px-3 py-1.5 bg-gradient-to-r from-lilac-50 to-purple-50 dark:from-lilac-900/20 dark:to-purple-900/20 text-lilac-700 dark:text-lilac-300 rounded-lg text-xs font-semibold border border-lilac-200 dark:border-lilac-800 shadow-sm"
                       initial={{ opacity: 0, scale: 0.8, y: 10 }}
                       animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 10 }}
                       transition={{ delay: index * 0.1 + techIndex * 0.05 }}
-                      whileHover={{ scale: 1.15, rotate: Math.random() * 10 - 5, y: -2 }}
+                      whileHover={{ scale: 1.15, rotate: jitter, y: -2 }}
                     >
                       {tech}
                     </motion.span>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 {/* Action Buttons */}
@@ -316,7 +331,7 @@ export function Projects() {
         </motion.div>
 
         {/* GitHub CTA */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

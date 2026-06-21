@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
-
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -38,8 +36,8 @@
   --animate-blob: blob 7s infinite;
 
   /* Font Families */
-  --font-display: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: var(--font-outfit), system-ui, sans-serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
 }
 
 /* Light mode variables */
@@ -58,6 +56,7 @@ body {
   font-family: var(--font-body);
   background-color: rgb(var(--background));
   color: rgb(var(--foreground));
+  overflow-x: hidden;
 }
 
 /* Keyframes */
@@ -287,9 +286,9 @@ body {
   background-clip: padding-box;
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Selection */

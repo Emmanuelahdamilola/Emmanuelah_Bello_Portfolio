@@ -200,21 +200,24 @@ export function About() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              {['Problem Solver', 'Team Player', 'Quick Learner', 'Creative Thinker'].map((trait, index) => (
+              {['Problem Solver', 'Team Player', 'Quick Learner', 'Creative Thinker'].map((trait, index) => {
+                const jitter = ((index * 37) % 5) - 2.5;
+                return (
                 <motion.span
                   key={trait}
                   variants={itemVariants}
                   className="group px-5 py-2.5 bg-gradient-to-r from-lilac-50 to-purple-50 dark:from-lilac-900/20 dark:to-purple-900/20 text-lilac-700 dark:text-lilac-300 rounded-full text-sm font-medium border border-lilac-200 dark:border-lilac-800 cursor-pointer"
                   whileHover={{ 
                     scale: 1.1, 
-                    rotate: Math.random() * 5 - 2.5,
+                    rotate: jitter,
                     boxShadow: "0 10px 25px rgba(168, 85, 247, 0.3)"
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">{trait}</span>
                 </motion.span>
-              ))}
+                );
+              })}
             </motion.div>
 
             {/* Stats Row */}

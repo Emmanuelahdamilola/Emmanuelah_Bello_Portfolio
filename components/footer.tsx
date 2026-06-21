@@ -1,6 +1,5 @@
 'use client';
 
-import { div, footer } from 'framer-motion/client';
 import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { FaWhatsapp, FaTwitter } from 'react-icons/fa';
 

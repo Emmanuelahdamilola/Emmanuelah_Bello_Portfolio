@@ -17,23 +17,37 @@ export function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message.');
+      }
+
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -207,34 +221,34 @@ export function Contact() {
                       whileHover={{ x: 8, scale: 1.02 }}
                     >
                       <motion.div
-                        className={`p-4 bg-gradient-to-br ${contact.color} rounded-xl text-white shadow-lg`}
+                        className={`p-4 bg-gradient-to-br ${contact.color} rounded-xl text-white shadow-lg shrink-0`}
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.6 }}
                       >
                         <contact.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-1">{contact.title}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-lilac-600 dark:group-hover:text-lilac-400 transition-colors">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-lilac-600 dark:group-hover:text-lilac-400 transition-colors break-words">
                           {contact.value}
                         </p>
                       </div>
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="text-lilac-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="text-lilac-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
                       >
                         →
                       </motion.div>
                     </motion.a>
                   ) : (
                     <div className="flex items-center gap-4 p-5 bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700">
-                      <div className={`p-4 bg-gradient-to-br ${contact.color} rounded-xl text-white shadow-lg`}>
+                      <div className={`p-4 bg-gradient-to-br ${contact.color} rounded-xl text-white shadow-lg shrink-0`}>
                         <contact.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-1">{contact.title}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{contact.value}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 break-words">{contact.value}</p>
                       </div>
                     </div>
                   )}
@@ -253,7 +267,7 @@ export function Contact() {
                 <Sparkles className="w-5 h-5 text-lilac-500" />
                 Connect on Social
               </h4>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
@@ -347,6 +361,18 @@ export function Contact() {
                   whileFocus={{ scale: 1.01, borderColor: '#a855f7' }}
                 />
               </motion.div>
+
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  role="alert"
+                  className="px-4 py-3 rounded-xl bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 text-sm text-red-700 dark:text-red-400"
+                >
+                  {error}
+                </motion.div>
+              )}
 
               <motion.button
                 type="submit"
